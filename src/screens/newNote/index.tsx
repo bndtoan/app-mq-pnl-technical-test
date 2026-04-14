@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { KeyboardAvoidingView, Platform, ScrollView, StyleSheet, View } from 'react-native';
+import { Keyboard, KeyboardAvoidingView, Platform, ScrollView, StyleSheet, TouchableWithoutFeedback, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
 import { basicStyles, colors, metrics, strings } from '../../themes';
@@ -34,27 +34,31 @@ export default function NewNoteScreen() {
       keyboardVerticalOffset={-insets.bottom}
       style={basicStyles.flex}
     >
-      <ScrollView style={basicStyles.flex} contentContainerStyle={styles.contentContainer}>
-        <CategoryPicker category={category} onSelectCategory={setCategory} />
-        <WhiteBackgroundView style={styles.noteInputContainer}>
-          <MyTextInput
-            style={styles.noteInput}
-            maxLength={200}
-            multiline
-            placeholder={strings.pleaseInputNote}
-            placeholderTextColor={colors.textWhite}
-            verticalAlign='top'
-            textAlignVertical='top'
-            onChangeText={(text) => { noteContentRef.current = text }}
-          />
-        </WhiteBackgroundView>
-      </ScrollView>
+      <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+        <View style={basicStyles.flex}>
+          <ScrollView style={basicStyles.flex} contentContainerStyle={styles.contentContainer}>
+            <CategoryPicker category={category} onSelectCategory={setCategory} />
+            <WhiteBackgroundView style={styles.noteInputContainer}>
+              <MyTextInput
+                style={styles.noteInput}
+                maxLength={200}
+                multiline
+                placeholder={strings.pleaseInputNote}
+                placeholderTextColor={colors.textWhite}
+                verticalAlign='top'
+                textAlignVertical='top'
+                onChangeText={(text) => { noteContentRef.current = text }}
+              />
+            </WhiteBackgroundView>
+          </ScrollView>
 
-      <TabBarWrapper style={basicStyles.center}>
-        <MyButton style={styles.saveButton} onPress={onSave}>
-          <MyText.Bold>{strings.save}</MyText.Bold>
-        </MyButton>
-      </TabBarWrapper>
+          <TabBarWrapper style={basicStyles.center}>
+            <MyButton style={styles.saveButton} onPress={onSave}>
+              <MyText.Bold>{strings.save}</MyText.Bold>
+            </MyButton>
+          </TabBarWrapper>
+        </View>
+      </TouchableWithoutFeedback>
     </KeyboardAvoidingView>
   );
 }
@@ -70,6 +74,7 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start'
   },
   noteInput: {
+    flex: 1,
     padding: metrics.space16,
   },
   saveButton: {
