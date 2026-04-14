@@ -21,4 +21,6 @@ export default {
   aboutUs: 'About Us',
   deleteAllNotes: 'Delete All Notes',
   deleteAllNotesMessage: 'All notes have been cleared',
+
+  unimplemented: 'Unimplemented feature',
 }

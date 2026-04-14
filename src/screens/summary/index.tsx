@@ -5,6 +5,7 @@ import { colors, imageResources, metrics, strings } from '../../themes';
 import { MyText } from '../../components';
 import SummarySection from './SummarySection';
 import NoteContext from '../../contexts/NoteContext';
+import { showUnimplementedToast } from '../../core/toast';
 
 export default function SummaryScreen() {
   const noteContext = NoteContext.useContext();
@@ -28,9 +29,24 @@ export default function SummaryScreen() {
       </View>
 
       <ScrollView style={styles.scrollView} contentContainerStyle={styles.scrollViewContent}>
-        <SummarySection icon={imageResources.icAvatarWork} title={strings.catWork} noteCount={noteContext.work.length} />
-        <SummarySection icon={imageResources.icAvatarLife} title={strings.catLife} noteCount={noteContext.life.length} />
-        <SummarySection icon={imageResources.icAvatarHealth} title={strings.catHealth} noteCount={noteContext.health.length} />
+        <SummarySection
+          icon={imageResources.icAvatarWork}
+          title={strings.catWork}
+          noteCount={noteContext.work.length}
+          onPressDetail={showUnimplementedToast}
+        />
+        <SummarySection
+          icon={imageResources.icAvatarLife}
+          title={strings.catLife}
+          noteCount={noteContext.life.length}
+          onPressDetail={showUnimplementedToast}
+        />
+        <SummarySection
+          icon={imageResources.icAvatarHealth}
+          title={strings.catHealth}
+          noteCount={noteContext.health.length}
+          onPressDetail={showUnimplementedToast}
+        />
       </ScrollView>
     </View>
   );

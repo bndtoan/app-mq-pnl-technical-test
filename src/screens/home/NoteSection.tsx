@@ -3,6 +3,7 @@ import { View, StyleSheet, Image, ImageSourcePropType } from 'react-native';
 import { metrics, colors, basicStyles, strings, imageResources } from '../../themes';
 import { MyText } from '../../components';
 import WhiteBackgroundView from '../../components/WhiteBackgroundView';
+import { showUnimplementedToast } from '../../core/toast';
 
 type Props = {
   icon: ImageSourcePropType;
@@ -22,7 +23,7 @@ export default function NoteSection({ icon, title, notes }: Props) {
       {!notes.length
         ? <MyText.Regular style={styles.textNoNote} color={colors.textWhiteLight}>{strings.noNote}</MyText.Regular>
         : notes.map(note => (
-          <WhiteBackgroundView style={styles.noteItem}>
+          <WhiteBackgroundView style={styles.noteItem} onPress={showUnimplementedToast}>
             <MyText.Regular style={basicStyles.flex}>
               {`${note.slice(0, 20)}${note.length > 20 ? '...' : ''}`}
             </MyText.Regular>
