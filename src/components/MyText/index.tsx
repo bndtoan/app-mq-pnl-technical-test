@@ -1,7 +1,7 @@
 import React from 'react';
 import { Text, TextProps } from 'react-native';
-import { SizeType, StyleType, textLineHeight, textSize, textStyle } from '../themes/typography';
-import colors from '../themes/colors';
+import { SizeType, StyleType, textLineHeight, textSize, textStyle } from '../../themes/typography';
+import colors from '../../themes/colors';
 
 
 function createTextComponent(

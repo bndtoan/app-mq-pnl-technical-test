@@ -3,11 +3,11 @@ import React from 'react';
 import { View, StyleSheet, Pressable, Image, Text } from 'react-native';
 
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import imageResources from '../themes/imageResources';
-import metrics from '../themes/metrics';
-import basicStyles from '../themes/basicStyles';
-import MyText from './MyText';
-import colors from '../themes/colors';
+import imageResources from '../../themes/imageResources';
+import metrics from '../../themes/metrics';
+import basicStyles from '../../themes/basicStyles';
+import colors from '../../themes/colors';
+import MyText from '../MyText';
 
 export default function MyTabBar(props: BottomTabBarProps) {
   const insets = useSafeAreaInsets()
