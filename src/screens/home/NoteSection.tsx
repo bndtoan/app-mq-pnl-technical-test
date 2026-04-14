@@ -1,10 +1,10 @@
 import React from 'react';
-import { View, StyleSheet, Image, ImageSourcePropType } from 'react-native';
-import { metrics, colors, basicStyles, strings, imageResources } from '../../themes';
+import { Image, ImageSourcePropType, StyleSheet, View } from 'react-native';
 import { MyText } from '../../components';
 import WhiteBackgroundView from '../../components/WhiteBackgroundView';
-import { showUnimplementedToast } from '../../core/toast';
 import { NoteType } from '../../contexts/NoteContext';
+import { showUnimplementedToast } from '../../core/toast';
+import { basicStyles, colors, imageResources, metrics, strings } from '../../themes';
 
 type Props = {
   type: NoteType;

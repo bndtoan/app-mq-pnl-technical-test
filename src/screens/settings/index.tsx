@@ -1,4 +1,3 @@
-import { Text, Button } from '@react-navigation/elements';
 import { Image, ImageSourcePropType, ScrollView, StyleSheet, View } from 'react-native';
 import * as Linking from 'expo-linking';
 
