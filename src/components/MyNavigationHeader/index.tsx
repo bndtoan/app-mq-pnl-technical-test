@@ -51,10 +51,10 @@ const styles = StyleSheet.create({
     width: metrics.icon24,
     height: metrics.icon24,
     borderRadius: 12,
-    marginLeft: metrics.space6,
+    marginRight: metrics.space8,
   },
   title: {
     flex: 1,
-    marginRight: metrics.space6,
+    marginRight: metrics.space8,
   }
 });

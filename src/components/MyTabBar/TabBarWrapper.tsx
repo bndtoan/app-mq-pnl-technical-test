@@ -14,7 +14,7 @@ export default function TabBarWrapper({ style, children }: Props) {
   const insets = useSafeAreaInsets()
 
   return (
-    <View style={[styles.container, { paddingBottom: insets.bottom }, style]}>
+    <View style={[styles.container, { height: 100 + insets.bottom, paddingBottom: insets.bottom }, style]}>
       <LinearGradient
         style={StyleSheet.absoluteFill}
         colors={[colors.tabbar1, colors.tabbar2]}

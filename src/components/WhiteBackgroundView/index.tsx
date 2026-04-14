@@ -8,10 +8,10 @@ type Props = {
   onPress?: () => void,
 }
 
-export default function WhiteBackgroundView(props: Props) {
+export default function WhiteBackgroundView({ style, onPress, children }: Props) {
   return (
-    <TouchableOpacity activeOpacity={0.8} style={[styles.container, props.style]} onPress={props.onPress}>
-      {props.children}
+    <TouchableOpacity activeOpacity={0.8} style={[styles.container, style]} onPress={onPress} disabled={!onPress}>
+      {children}
     </TouchableOpacity>
   );
 }
