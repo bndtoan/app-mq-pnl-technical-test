@@ -1,12 +1,12 @@
 import { BottomTabBarProps } from '@react-navigation/bottom-tabs';
 import React from 'react';
-import { View, StyleSheet, Pressable, Image, Text } from 'react-native';
+import { StyleSheet, Pressable, Image } from 'react-native';
 
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import imageResources from '../../themes/imageResources';
 import { basicStyles, colors, metrics } from '../../themes';
-import { LinearGradient } from 'expo-linear-gradient';
 import MyText from '../MyText';
+import TabBarWrapper from './TabBarWrapper';
 
 export default function MyTabBar(props: BottomTabBarProps) {
   const insets = useSafeAreaInsets()
@@ -14,12 +14,7 @@ export default function MyTabBar(props: BottomTabBarProps) {
   const selectedIndex = props.state.index
 
   return (
-    <View style={[styles.container, { paddingBottom: insets.bottom }]}>
-      <LinearGradient
-        style={StyleSheet.absoluteFill}
-        colors={[colors.tabbar1, colors.tabbar2]}
-      />
-
+    <TabBarWrapper style={basicStyles.rowCenter}>
       <Pressable style={styles.tabButtonContainer} onPress={() => props.navigation.navigate('homeTab')}>
         <Image
           source={selectedIndex === 0 ? imageResources.icHomeActive : imageResources.icHomeInactive}
@@ -42,17 +37,11 @@ export default function MyTabBar(props: BottomTabBarProps) {
         />
         <MyText.Medium color={selectedIndex === 1 ? colors.textPink : colors.textWhite}>Summary</MyText.Medium>
       </Pressable>
-    </View>
+    </TabBarWrapper>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    ...basicStyles.rowCenter,
-    borderTopLeftRadius: metrics.radius20,
-    borderTopRightRadius: metrics.radius20,
-    overflow: 'hidden',
-  },
   tabButtonContainer: {
     height: 100,
     width: 125,

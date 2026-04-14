@@ -2,6 +2,7 @@ export default {
   // radius
   radius16: 16,
   radius20: 20,
+  radius24: 24,
 
   // spacing
   space2: 2,
