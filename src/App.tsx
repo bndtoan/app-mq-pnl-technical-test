@@ -9,6 +9,7 @@ import Navigation from './navigation';
 import AppGradientBackground from './components/AppGradientBackground';
 import NoteContext from './contexts/NoteContext';
 import { useFonts } from 'expo-font';
+import AppStartup from './AppStartup';
 
 Asset.loadAsync(NavigationAssets);
 
@@ -24,6 +25,7 @@ export function App() {
 
   return (
     <NoteContext.Provider value={noteContextValue}>
+      <AppStartup />
       <AppGradientBackground />
       <Navigation
         onReady={() => { SplashScreen.hideAsync(); }}

@@ -9,6 +9,7 @@ export default {
   catHealth: 'Health and wellness',
 
   recentNotes: 'Recently created notes',
+  noNote: 'No note available',
   detail: 'Detail',
   chooseCategory: 'Choose a category',
   pleaseInputNote: 'Please input note content',

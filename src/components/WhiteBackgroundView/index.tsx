@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StyleSheet, Pressable, ViewProps, Platform } from 'react-native';
+import { StyleSheet, ViewProps, TouchableOpacity } from 'react-native';
 import { colors } from '../../themes';
 
 type Props = {
@@ -10,9 +10,9 @@ type Props = {
 
 export default function WhiteBackgroundView(props: Props) {
   return (
-    <Pressable style={[styles.container, props.style]} onPress={props.onPress}>
+    <TouchableOpacity activeOpacity={0.8} style={[styles.container, props.style]} onPress={props.onPress}>
       {props.children}
-    </Pressable>
+    </TouchableOpacity>
   );
 }
 

@@ -5,20 +5,19 @@ import { colors } from '../../themes';
 
 
 function createTextComponent(
-  defaultTextColor: string = colors.textWhite,
   styleConfig: Record<StyleType, string> = textStyle,
   sizeConfig: Record<SizeType, number> = textSize,
   lineHeighConfig: Record<SizeType, number> = textLineHeight
 ) {
   function createMyText(textStyle: StyleType) {
     type Props = {
-      color: string;
+      color?: string;
       size: SizeType;
       children: React.ReactNode;
     } & TextProps;
 
     function MyText(props: Props) {
-      const { color, size, children, style, ...anyProps } = props;
+      const { color = colors.textWhite, size, children, style, ...anyProps } = props;
 
       return (
         <Text
@@ -37,7 +36,7 @@ function createTextComponent(
         </Text>
       );
     }
-    MyText.defaultProps = { color: defaultTextColor, size: 'text14', };
+    MyText.defaultProps = { size: 'text14', };
     return MyText;
   }
 

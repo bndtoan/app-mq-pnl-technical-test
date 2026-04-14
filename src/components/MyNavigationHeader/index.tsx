@@ -23,11 +23,11 @@ export default function MyTabBar(props: Props) {
       />
 
       {props.back && (
-        <TouchableOpacity style={styles.backIcon} onPress={() => navigation.goBack()}>
+        <TouchableOpacity activeOpacity={0.8} style={styles.backIcon} onPress={() => navigation.goBack()}>
           <Image source={imageResources.icArrowLeft} />
         </TouchableOpacity>
       )}
-      <MyText.Bold style={styles.title} size='text24' color={colors.textWhite}>{props.options.title || ''}</MyText.Bold>
+      <MyText.Bold style={styles.title} size='text24'>{props.options.title || ''}</MyText.Bold>
       {props.options.headerRight?.({ canGoBack: props.navigation.canGoBack() })}
     </View>
   );
