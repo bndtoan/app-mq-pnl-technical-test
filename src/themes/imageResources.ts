@@ -18,6 +18,7 @@ export default {
 
   // icon
   icArrowRight: require('../assets/ic-arrow-right.png'),
+  icArrowLeft: require('../assets/ic-arrow-left.png'),
   icArrowDown: require('../assets/ic-arrow-down.png'),
   icSettings: require('../assets/ic-setting.png'),
   icClock: require('../assets/ic-clock.png'),

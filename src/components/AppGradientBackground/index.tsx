@@ -1,12 +1,16 @@
 import { LinearGradient } from 'expo-linear-gradient';
 import React from 'react';
-import { View, StyleSheet } from 'react-native';
+import { StyleSheet } from 'react-native';
+import { colors } from '../../themes';
 
 export default function AppGradientBackground() {
-  const targetRef = React.useRef<View | null>(null);
-
   return (
-    <LinearGradient style={styles.container} colors={['#1B284F', '#351159', '#421C45', '#3B184E']} start={{ x: 0, y: 0 }} end={{ x: 1, y: 1 }} />
+    <LinearGradient
+      style={styles.container}
+      colors={[colors.background1, colors.background2, colors.background3, colors.background4]}
+      start={{ x: 0, y: 0 }}
+      end={{ x: 1, y: 1 }}
+    />
   );
 }
 

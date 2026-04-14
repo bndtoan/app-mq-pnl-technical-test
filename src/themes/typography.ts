@@ -17,8 +17,8 @@ export const textSize: Record<SizeType, number> = {
 };
 
 export const textLineHeight: Record<SizeType, number> = {
-  'text12': 16,
-  'text14': 18,
-  'text16': 20,
-  'text24': 31,
+  'text12': 15,
+  'text14': 17,
+  'text16': 19,
+  'text24': 36,
 };

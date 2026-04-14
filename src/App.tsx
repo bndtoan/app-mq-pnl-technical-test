@@ -5,7 +5,7 @@ import { createURL } from 'expo-linking';
 import * as SplashScreen from 'expo-splash-screen';
 import * as React from 'react';
 
-import { Navigation } from './navigation';
+import Navigation from './navigation';
 import AppGradientBackground from './components/AppGradientBackground';
 import NoteContext from './contexts/NoteContext';
 
@@ -22,14 +22,7 @@ export function App() {
     <NoteContext.Provider value={noteContextValue}>
       <AppGradientBackground />
       <Navigation
-        theme={{ ...DarkTheme, colors: { ...DarkTheme.colors, background: 'transparent' } }}
-        linking={{
-          enabled: 'auto',
-          prefixes: [prefix],
-        }}
-        onReady={() => {
-          SplashScreen.hideAsync();
-        }}
+        onReady={() => { SplashScreen.hideAsync(); }}
       />
     </NoteContext.Provider>
   );

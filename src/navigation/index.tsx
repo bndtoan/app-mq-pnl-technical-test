@@ -1,32 +1,45 @@
-import { createStaticNavigation } from '@react-navigation/native';
+import { DarkTheme, NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { View } from 'react-native';
 
-import TabsNavigator from './tabsNavigator';
 import { RootStackParamList } from './types';
-import { NewNoteScreen, NotFoundScreen, SettingsScreen } from '../screens';
+import { createURL } from 'expo-linking';
+import { screenConfig } from './screenConfig';
+import { MyNavigationHeader } from '../components';
 
-export const RootStack = createNativeStackNavigator<RootStackParamList>({
-  screens: {
-    tabs: {
-      screen: TabsNavigator,
-      options: { headerShown: false },
-    },
-    newNote: {
-      screen: NewNoteScreen,
-    },
-    settings: {
-      screen: SettingsScreen,
-    },
-    notFound: {
-      screen: NotFoundScreen,
-      options: { title: '404' },
-      linking: { path: '*' },
-    },
-  },
-  screenOptions: {
-    header: () => <View />
-  },
-});
 
-export const Navigation = createStaticNavigation(RootStack);
+const prefix = createURL('/');
+
+const Stack = createNativeStackNavigator<RootStackParamList>();
+
+type Props = {
+  onReady: () => void
+}
+
+export default function Navigation({ onReady }: Props) {
+  return (
+    <NavigationContainer
+      theme={{ ...DarkTheme, colors: { ...DarkTheme.colors, background: 'transparent' } }}
+      linking={{
+        prefixes: [prefix],
+        config: {
+          screens: { notFound: '*' }
+        }
+      }}
+      onReady={onReady}
+    >
+      <Stack.Navigator
+        initialRouteName='tabs'
+        screenOptions={{
+          // headerTitleAlign: 'left',
+          // headerBackButtonDisplayMode: 'minimal',
+          header: (props) => <MyNavigationHeader {...props} />
+        }}
+      >
+        {screenConfig.map(config => {
+          const { name, ...options } = config
+          return <Stack.Screen key={name} name={name} {...options} />
+        })}
+      </Stack.Navigator>
+    </NavigationContainer>
+  )
+}

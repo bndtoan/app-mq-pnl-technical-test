@@ -4,9 +4,8 @@ import { View, StyleSheet, Pressable, Image, Text } from 'react-native';
 
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import imageResources from '../../themes/imageResources';
-import metrics from '../../themes/metrics';
-import basicStyles from '../../themes/basicStyles';
-import colors from '../../themes/colors';
+import { basicStyles, colors, metrics } from '../../themes';
+import { LinearGradient } from 'expo-linear-gradient';
 import MyText from '../MyText';
 
 export default function MyTabBar(props: BottomTabBarProps) {
@@ -16,6 +15,11 @@ export default function MyTabBar(props: BottomTabBarProps) {
 
   return (
     <View style={[styles.container, { paddingBottom: insets.bottom }]}>
+      <LinearGradient
+        style={StyleSheet.absoluteFill}
+        colors={[colors.tabbar1, colors.tabbar2]}
+      />
+
       <Pressable style={styles.tabButtonContainer} onPress={() => props.navigation.navigate('homeTab')}>
         <Image
           source={selectedIndex === 0 ? imageResources.icHomeActive : imageResources.icHomeInactive}
@@ -45,9 +49,9 @@ export default function MyTabBar(props: BottomTabBarProps) {
 const styles = StyleSheet.create({
   container: {
     ...basicStyles.rowCenter,
-    backgroundColor: '#1C0B37',
     borderTopLeftRadius: metrics.radius20,
     borderTopRightRadius: metrics.radius20,
+    overflow: 'hidden',
   },
   tabButtonContainer: {
     height: 100,
