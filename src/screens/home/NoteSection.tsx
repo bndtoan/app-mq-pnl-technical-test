@@ -23,7 +23,9 @@ export default function NoteSection({ icon, title, notes }: Props) {
         ? <MyText.Regular style={styles.textNoNote} color={colors.textWhiteLight}>{strings.noNote}</MyText.Regular>
         : notes.map(note => (
           <WhiteBackgroundView style={styles.noteItem}>
-            <MyText.Regular style={basicStyles.flex}>{note}</MyText.Regular>
+            <MyText.Regular style={basicStyles.flex}>
+              {`${note.slice(0, 20)}${note.length > 20 ? '...' : ''}`}
+            </MyText.Regular>
             <Image source={imageResources.icArrowRight} style={styles.icon} />
           </WhiteBackgroundView>
         ))}
