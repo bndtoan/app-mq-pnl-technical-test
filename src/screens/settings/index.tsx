@@ -1,10 +1,11 @@
-import { Text } from '@react-navigation/elements';
+import { Text, Button } from '@react-navigation/elements';
 import { StyleSheet, View } from 'react-native';
 
-export function Updates() {
+export default function SettingsScreen() {
   return (
     <View style={styles.container}>
-      <Text>Updates Screen</Text>
+      <Text>404</Text>
+      <Button screen="tabs">Go to Home</Button>
     </View>
   );
 }

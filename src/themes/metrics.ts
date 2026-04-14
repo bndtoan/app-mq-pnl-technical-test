@@ -1,0 +1,20 @@
+export default {
+  // radius
+  radius16: 16,
+  radius20: 20,
+
+  // spacing
+  space2: 2,
+  space4: 4,
+  space6: 6,
+  space8: 8,
+  space16: 16,
+  space20: 20,
+  space24: 24,
+  space28: 28,
+
+  // icon
+  icon20: 20,
+  icon24: 24,
+  icon48: 48,
+}
