@@ -4,14 +4,16 @@ import { metrics, colors, basicStyles, strings, imageResources } from '../../the
 import { MyText } from '../../components';
 import WhiteBackgroundView from '../../components/WhiteBackgroundView';
 import { showUnimplementedToast } from '../../core/toast';
+import { NoteType } from '../../contexts/NoteContext';
 
 type Props = {
+  type: NoteType;
   icon: ImageSourcePropType;
   title: string;
   notes: string[];
 };
 
-export default function NoteSection({ icon, title, notes }: Props) {
+export default function NoteSection({ type, icon, title, notes }: Props) {
   return (
     <>
       <View style={styles.titleRow}>
@@ -22,8 +24,8 @@ export default function NoteSection({ icon, title, notes }: Props) {
       </View>
       {!notes.length
         ? <MyText.Regular style={styles.textNoNote} color={colors.textWhiteLight}>{strings.noNote}</MyText.Regular>
-        : notes.map(note => (
-          <WhiteBackgroundView style={styles.noteItem} onPress={showUnimplementedToast}>
+        : notes.map((note, index) => (
+          <WhiteBackgroundView key={`${type}_${index}`} style={styles.noteItem} onPress={showUnimplementedToast}>
             <MyText.Regular style={basicStyles.flex}>
               {`${note.slice(0, 20)}${note.length > 20 ? '...' : ''}`}
             </MyText.Regular>

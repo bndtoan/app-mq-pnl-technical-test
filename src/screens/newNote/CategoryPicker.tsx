@@ -45,6 +45,7 @@ export default function CategoryPicker({ category, onSelectCategory }: Props) {
             <View style={styles.pickerView}>
               {Object.entries(PICKER_VALUE).map(([value, label], index) => (
                 <Pressable
+                  key={value}
                   style={[styles.pickerItem, index != 0 && { borderTopWidth: 1 }]}
                   onPress={() => onPressCategory(value as NoteType)}
                 >

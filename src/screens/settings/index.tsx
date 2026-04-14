@@ -27,8 +27,8 @@ export default function SettingsScreen() {
   return (
     <View style={styles.container}>
       <ScrollView style={basicStyles.flex} contentContainerStyle={styles.contentContainer}>
-        {SETTING_CONFIGS.map(config => (
-          <WhiteBackgroundView style={styles.settingItem} onPress={() => Linking.openURL(config.url)}>
+        {SETTING_CONFIGS.map((config, index) => (
+          <WhiteBackgroundView key={index} style={styles.settingItem} onPress={() => Linking.openURL(config.url)}>
             <Image source={config.icon} style={styles.icon} />
             <MyText.Regular style={basicStyles.flex} size='text16'>
               {config.label}

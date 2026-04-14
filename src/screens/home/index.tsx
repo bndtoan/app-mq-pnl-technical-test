@@ -20,9 +20,24 @@ export default function HomeScreen() {
         </MyText.Regular>
       </View>
 
-      <NoteSection icon={imageResources.icWork} title={strings.catWork} notes={noteContext.work.slice(0, 3)} />
-      <NoteSection icon={imageResources.icLife} title={strings.catLife} notes={noteContext.life.slice(0, 3)} />
-      <NoteSection icon={imageResources.icHealth} title={strings.catHealth} notes={noteContext.health.slice(0, 3)} />
+      <NoteSection
+        type='work'
+        icon={imageResources.icWork}
+        title={strings.catWork}
+        notes={noteContext.work.slice(0, 3)}
+      />
+      <NoteSection
+        type='life'
+        icon={imageResources.icLife}
+        title={strings.catLife}
+        notes={noteContext.life.slice(0, 3)}
+      />
+      <NoteSection
+        type='health'
+        icon={imageResources.icHealth}
+        title={strings.catHealth}
+        notes={noteContext.health.slice(0, 3)}
+      />
     </ScrollView>
   );
 }
