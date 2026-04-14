@@ -18,11 +18,6 @@ SplashScreen.preventAutoHideAsync();
 
 export function App() {
   const noteContextValue = NoteContext.createContextValue();
-  useFonts({
-    'PingFang-Regular': require('../assets/fonts/PingFang-Regular.ttf'),
-    'PingFang-Medium': require('../assets/fonts/PingFang-Medium.ttf'),
-    'PingFang-Bold': require('../assets/fonts/PingFang-Bold.ttf'),
-  })
 
   return (
     <NoteContext.Provider value={noteContextValue}>
