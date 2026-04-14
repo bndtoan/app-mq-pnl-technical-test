@@ -27,5 +27,6 @@ export default {
   textGrey: '#918DAC',
   textPink: '#F94695',
   backgroundWhite: '#FFFFFF0D',
-  borderWhite: '#FFFFFF1F'
+  borderWhite: '#FFFFFF1F',
+  shadow: '#1F0731'
 }

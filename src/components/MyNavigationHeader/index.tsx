@@ -41,6 +41,11 @@ const styles = StyleSheet.create({
     overflow: 'hidden',
     paddingBottom: metrics.space16,
     paddingHorizontal: metrics.space20,
+    elevation: 2,
+    shadowColor: colors.shadow,
+    shadowOpacity: 0.25,
+    shadowRadius: 5,
+    shadowOffset: { width: 0, height: 4 },
   },
   backIcon: {
     width: metrics.icon24,
