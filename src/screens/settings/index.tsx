@@ -1,18 +1,18 @@
-import { Image, ImageSourcePropType, ScrollView, StyleSheet, View } from 'react-native';
 import * as Linking from 'expo-linking';
+import { Image, ImageSourcePropType, ScrollView, StyleSheet, View } from 'react-native';
 
-import { basicStyles, imageResources, metrics, strings } from '../../themes';
-import WhiteBackgroundView from '../../components/WhiteBackgroundView';
 import { MyButton, MyText } from '../../components';
 import TabBarWrapper from '../../components/MyTabBar/TabBarWrapper';
+import WhiteBackgroundView from '../../components/WhiteBackgroundView';
 import NoteContext from '../../contexts/NoteContext';
 import { showToast } from '../../core/toast';
+import { basicStyles, imageResources, metrics, strings } from '../../themes';
 
 const SETTING_CONFIGS: { icon: ImageSourcePropType, label: string, url: string }[] = [
   { icon: imageResources.icOnlineCustomer, label: strings.onlineCustomer, url: 'https://www.google.com/' },
-  { icon: imageResources.icUserAgreement, label: strings.userAgreement, url: 'https://www.google.com/' },
-  { icon: imageResources.icPrivacyPolicy, label: strings.privacyPolicy, url: 'https://www.google.com/' },
-  { icon: imageResources.icAboutUs, label: strings.aboutUs, url: 'https://www.google.com/' },
+  { icon: imageResources.icUserAgreement, label: strings.userAgreement, url: 'https://github.com/bndtoan/app-mq-pnl-technical-test' },
+  { icon: imageResources.icPrivacyPolicy, label: strings.privacyPolicy, url: 'https://www.reuters.com/' },
+  { icon: imageResources.icAboutUs, label: strings.aboutUs, url: 'https://expo.dev/' },
 ]
 
 export default function SettingsScreen() {
