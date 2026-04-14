@@ -20,7 +20,8 @@ export default {
   privacyPolicy: 'Privacy Policy',
   aboutUs: 'About Us',
   deleteAllNotes: 'Delete All Notes',
-  deleteAllNotesMessage: 'All notes have been cleared',
+  deleteAllNotesMessage: 'All notes have\nbeen cleared',
 
   unimplemented: 'Unimplemented feature',
+  invalidInput: 'Invalid input'
 }

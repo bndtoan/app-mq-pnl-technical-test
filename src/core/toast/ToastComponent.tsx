@@ -22,7 +22,6 @@ export default function ToastComponent({ message }: Props) {
 
 const styles = StyleSheet.create({
   container: {
-    maxWidth: 174,
     paddingVertical: metrics.space20,
     paddingHorizontal: metrics.space32,
     borderRadius: metrics.radius20,
