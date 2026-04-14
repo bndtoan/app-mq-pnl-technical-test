@@ -8,6 +8,7 @@ type ContextValueType = Record<NoteType, string[]> & { initDone: boolean };
 type ContextActionType = {
   setNotes: (data: any) => void,
   addNote: (type: NoteType, note: string) => void;
+  deleteAll: () => void,
 };
 
 export const defaultValue: ContextValueType = {
@@ -28,6 +29,10 @@ export default createContext<ContextValueType, ContextActionType>(
       }
       asyncStorage.set('NOTE', newState);
       return newState;
+    },
+    deleteAll: (_) => {
+      asyncStorage.remove('NOTE');
+      return { ...defaultValue, initDone: true }
     },
   }),
 );

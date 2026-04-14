@@ -26,7 +26,7 @@ export default function NoteSection({ icon, title, notes }: Props) {
             <MyText.Regular style={basicStyles.flex}>
               {`${note.slice(0, 20)}${note.length > 20 ? '...' : ''}`}
             </MyText.Regular>
-            <Image source={imageResources.icArrowRight} style={styles.icon} />
+            <Image source={imageResources.icArrowRight} style={styles.iconArrow} />
           </WhiteBackgroundView>
         ))}
     </>

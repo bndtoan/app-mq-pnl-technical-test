@@ -10,6 +10,7 @@ import AppGradientBackground from './components/AppGradientBackground';
 import NoteContext from './contexts/NoteContext';
 import { useFonts } from 'expo-font';
 import AppStartup from './AppStartup';
+import ToastService from './core/toast';
 
 Asset.loadAsync(NavigationAssets);
 
@@ -30,6 +31,7 @@ export function App() {
       <Navigation
         onReady={() => { SplashScreen.hideAsync(); }}
       />
+      <ToastService />
     </NoteContext.Provider>
   );
 }

@@ -14,6 +14,7 @@ export default {
   space20: 20,
   space24: 24,
   space28: 28,
+  space32: 32,
 
   // icon
   icon20: 20,
